@@ -16,7 +16,7 @@ function(hljs) {
     'ascending descending from get group into join let orderby partial select set value var ' +
     'where yield';
   return {
-    aliases: ['csharp'],
+    aliases: ['csharp','c#'],
     keywords: KEYWORDS,
     illegal: /::/,
     contains: [
@@ -56,11 +56,11 @@ function(hljs) {
       hljs.QUOTE_STRING_MODE,
       hljs.C_NUMBER_MODE,
       {
-        beginKeywords: 'protected public private internal', end: /[{;=]/,
+        beginKeywords: 'protected public private internal class namespace interface struct', end: /[{;=]/,
         keywords: KEYWORDS,
         contains: [
           {
-            beginKeywords: 'class namespace interface',
+            beginKeywords: 'class namespace interface struct',
             starts: {
               contains: [hljs.TITLE_MODE]
             }
